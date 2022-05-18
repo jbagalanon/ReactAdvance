@@ -11,8 +11,13 @@ const UseEffectCleanup = () => {
   };
 
   useEffect(() => {
-    console.log ('hi');
+    console.log('hi');
     window.addEventListener("resize", checkSize);
+
+    return () => {
+      console.log('cleanup');
+      window.removeEventListener('resize', checkSize);
+    };
   });
 
   return <>
