@@ -4,11 +4,21 @@ import React, { useState, useEffect } from 'react';
 // second argument
 
 const UseEffectCleanup = () => {
-  const [size, setSize] = useState (window.innerWidth);
+  const [size, setSize] = useState(window.innerWidth);
 
-  console.log(size);
+  const checkSize = () => {
+    setSize(window.innerWidth);
+  };
 
-  return <h2>useEffect cleanup</h2>;
+  useEffect(() => {
+    console.log ('hi');
+    window.addEventListener("resize", checkSize);
+  });
+
+  return <>
+    <h1>Windows Width</h1>
+    <h2>{size} PX</h2>
+  </>;
 };
 
 export default UseEffectCleanup;
