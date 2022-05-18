@@ -8,6 +8,7 @@ const UseEffectBasics = () => {
 
   useEffect(() => {
     console.log('useeffect activated');
+    document.title = `New Messages(${value})`;
 
   });
 
