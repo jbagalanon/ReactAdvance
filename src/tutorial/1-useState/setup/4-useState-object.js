@@ -6,13 +6,20 @@ const UseStateObject = () => {
   const [person, setPerson] = useState({ name: 'Swordfish', age: 27, message: "Welcome to gulag" });
 
   const changeMessage = () => {
-    setPerson({...person, name:"Barracuda", message: "See you again"});
+    // setPerson({ ...person, name: "Barracuda", message: "See you again" });
+
+    setMessage ('Just hi');
   }
+  // Alternative way, not declaring an onject
+  const [name, setName] = useState('Barracuda');
+  const [age, setage] = useState(23);
+  const [message, setMessage] = useState("til death do us die");
+
 
   return <>
-  <h3>{person.name}</h3>
-    <h3>{person.age}</h3>
-    <h3>{person.message}</h3>
+    <h3>{name}</h3>
+    <h3>{age}</h3>
+    <h3>{message}</h3>
     <button className="btn" onClick={changeMessage}>Change Message</button>
   </>;
 };
