@@ -14,11 +14,12 @@ const UseEffectCleanup = () => {
     console.log('hi');
     window.addEventListener("resize", checkSize);
 
-    return () => {
-      console.log('cleanup');
-      window.removeEventListener('resize', checkSize);
-    };
-  });
+    //this is important in conditional(appear/dissappear) rendering otherwise use []
+    // return () => {
+    //   console.log('cleanup');
+    //   window.removeEventListener('resize', checkSize);
+    // };
+  }, []);
 
   return <>
     <h1>Windows Width</h1>
