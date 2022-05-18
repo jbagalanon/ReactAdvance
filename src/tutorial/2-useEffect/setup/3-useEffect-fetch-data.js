@@ -5,11 +5,22 @@ const url = 'https://api.github.com/users';
 const UseEffectSecondArgument = () => {
   const [users, setUsers] = useState([]);
 
+  const getUsers = async () => {
+
+    const response = await fetch(url);
+    const users = await response.json();
+    console.log(users);
+  }
+
+
+  useEffect(() => {
+    getUsers();
+  })
 
   return <>
-  <h3>Github Users</h3>
-  
-  
+    <h3>Github Users</h3>
+
+
   </>;
 };
 
