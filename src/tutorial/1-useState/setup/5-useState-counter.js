@@ -11,6 +11,7 @@ const UseStateCounter = () => {
     setTimeout(() => {
       // setValue(value + 1); //only 1 will be add even if 3 click
       //this one will invoke the current value and add to the prev value
+      //funtional approach
       setValue((prevState) => {
         return prevState + 1;
       })
