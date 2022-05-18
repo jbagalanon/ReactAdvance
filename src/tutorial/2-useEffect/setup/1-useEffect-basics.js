@@ -11,7 +11,8 @@ const UseEffectBasics = () => {
     if (value >= 1) {
       document.title = `New Messages(${value})`;
     }
-  });
+  }, []); //[]=if empty, it will run only on initial render
+  // [value] = the useeffect will run everytime the value 
 
   console.log('render component');
   return <>
