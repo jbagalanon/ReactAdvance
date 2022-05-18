@@ -10,9 +10,10 @@ const UseEffectSecondArgument = () => {
     const response = await fetch(url);
     const users = await response.json();
     console.log(users);
+    //setUsers (users) = this code will run but it loops because of useeffect functions
   }
 
-
+  //useeffect will run after every render and it cause looping for some codes
   useEffect(() => {
     getUsers();
   })
