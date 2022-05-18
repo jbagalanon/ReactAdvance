@@ -9,10 +9,11 @@ const UseStateObject = () => {
     // setPerson({ ...person, name: "Barracuda", message: "See you again" });
 
     setMessage ('Just hi');
+    setAge(31);
   }
   // Alternative way, not declaring an onject
   const [name, setName] = useState('Barracuda');
-  const [age, setage] = useState(23);
+  const [age, setAge] = useState(23);
   const [message, setMessage] = useState("til death do us die");
 
 
