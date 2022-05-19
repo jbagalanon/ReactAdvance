@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
 
-const url = 'https://api.github.com/users/QuincyLarson';
+const url = 'https://api.github.com/users/jbagalanon';
 
 
 //this is tutorial 20
 
 const MultipleReturns = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
   const [user, setUser] = useState('default user');
 
   useEffect(() => {
     fetch(url)
-    .then((resp)=>resp.json())
-    .then((user)=>console.log(user))
-    .catch((error)=> console.log (error));
+      .then((resp) => resp.json())
+      .then((user) => {
+        const { login } = user;
+        setUser(login);
+        setIsLoading(false);
+      })
+      .catch((error) => console.log(error));
 
   }, []);
 
