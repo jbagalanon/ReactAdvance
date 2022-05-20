@@ -21,6 +21,10 @@ const ShortCircuit = () => {
           setIsError(!isError)
     }>Toggle Error</button>
     {isError && <h2> Error </h2> }
+
+    {/* This is ternary operator works */}
+    {isError ? <p> an error occured </p> : <div> Code is working fine </div>}
+
   </>);
 };
 
