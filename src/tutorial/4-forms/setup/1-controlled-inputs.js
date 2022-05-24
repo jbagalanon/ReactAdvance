@@ -9,7 +9,7 @@ const ControlledInputs = () => {
 
 
   const handleSubmit = (e) => {
-    //prevent reading default function of submit
+    //prevent reading default function of submit | Unable to refresh the browser
     e.preventDefault();
     console.log("hi");
   }
@@ -25,7 +25,7 @@ const ControlledInputs = () => {
           <label htmlFor="email">Email:</label>
           <input type="text" id="email" name='email' />
         </div>
-        <button type='submit'>Add Person</button>
+        <button type='submit' >Add Person</button>
       </form>
     </article>
   </>;
