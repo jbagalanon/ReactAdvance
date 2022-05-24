@@ -17,7 +17,7 @@ const ControlledInputs = () => {
 
     if (firstName && email) {
       const person = { firstName, email };
-      setPeople ((people) =>{
+      setPeople((people) => {
         return [...people, person];
       });
       //this will clear the value after submittig the value
@@ -29,6 +29,7 @@ const ControlledInputs = () => {
     }
 
   }
+  //note don't use index when planning to add or remove to an array
   return <>
     <article>
       <form className="form" onSubmit={handleSubmit}>
@@ -47,6 +48,17 @@ const ControlledInputs = () => {
         </div>
         <button type='submit'>Add Person</button>
       </form>
+      
+      {people.map((person) => {
+        const {id, firstName, email} = person;
+
+      return (
+      <div>
+        <h4>{firstName}</h4>
+        <p>{email}</p>
+      </div>
+      );
+      })}
     </article>
   </>;
 };
