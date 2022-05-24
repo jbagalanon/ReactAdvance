@@ -9,11 +9,20 @@ const ControlledInputs = () => {
 
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
-  // (e) = is an event object
+  const [people, setPeople] = useState([]);
+  // (e) = is an event object, will reference tthe object later
   const handleSubmit = (e) => {
     //prevent reading default function of submit | Unable to refresh the browser
     e.preventDefault();
-    console.log("hi");
+
+    if (firstName && email) {
+      const person = { firstName: firstName, email: email };
+      console.log(person);
+    }
+    else {
+      console.log('empty values');
+    }
+
   }
   return <>
     <article>
@@ -28,7 +37,7 @@ const ControlledInputs = () => {
         <div className="form-control">
           <label htmlFor="email">Email:</label>
           <input type="text" id="email" name='email' value={email}
-            onChange={(e) => setEmail (e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <button type='submit'>Add Person</button>
