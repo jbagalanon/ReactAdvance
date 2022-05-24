@@ -17,7 +17,12 @@ const ControlledInputs = () => {
 
     if (firstName && email) {
       const person = { firstName, email };
-      console.log(person);
+      setPeople ((people) =>{
+        return [...people, person];
+      });
+      //this will clear the value after submittig the value
+      setFirstName("");
+      setEmail("");
     }
     else {
       console.log('empty values');
