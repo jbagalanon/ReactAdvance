@@ -16,7 +16,7 @@ const ControlledInputs = () => {
     e.preventDefault();
 
     if (firstName && email) {
-      const person = { firstName: firstName, email: email };
+      const person = { firstName, email };
       console.log(person);
     }
     else {
