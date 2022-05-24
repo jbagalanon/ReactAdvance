@@ -8,9 +8,14 @@ import React, { useState } from 'react';
 const ControlledInputs = () => {
 
 
+  const handleSubmit = (e) => {
+    //prevent reading default function of submit
+    e.preventDefault();
+    console.log("hi");
+  }
   return <>
     <article>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-control">
           <label htmlFor="firstName">Name:</label>
           <input type="text" id="firstName" name='firstName' />
@@ -20,6 +25,7 @@ const ControlledInputs = () => {
           <label htmlFor="email">Email:</label>
           <input type="text" id="email" name='email' />
         </div>
+        <button type='submit'>Add Person</button>
       </form>
     </article>
   </>;
